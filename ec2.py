@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 ec2.py
 ~~~~~~
@@ -43,7 +44,12 @@ AMIS = {"m1.small" : "ami-e2af508b",
 # objects, which represent named EC2 clusters.
 #
 # The shelf will be stored at "HOME/.ec2-shelf"
-HOME = "/home/mnielsen"
+HOME = "D:/temp/ec2home"
+USER = "ubuntu"
+os.environ["AWS_HOME"] = HOME
+os.environ["AWS_KEYPAIR"] = "ec2cluster"
+os.environ["AWS_ACCESS_KEY_ID"]  = "AKIAJTIRHE7Y6URNZTDQ"
+os.environ["AWS_SECRET_ACCESS_KEY"] = "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"
 
 # Check that the required environment variables exist
 def check_environment_variables_exist(*args):
@@ -210,12 +216,11 @@ def ssh(cluster_name, instance_index, cmd, background=False):
     """
     cluster = get_cluster(cluster_name)
     instance = get_instance(cluster, instance_index)
-    keypair = "%s/%s.pem" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
+    keypair = "%s/%s.ppk" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
     append = {True: " &", False: ""}[background]
-    remote_cmd = ("'nohup %s > foo.out 2> foo.err < /dev/null %s'" %
+    remote_cmd = ('nohup %s >> foo.out 2>> foo.err < /dev/null%s' %
                   (cmd, append))
-    os.system(("ssh -o BatchMode=yes -i %s ubuntu@%s %s" %
-               (keypair, instance.public_dns_name, remote_cmd)))
+    return subprocess.call(["C:/Program Files (x86)/PuTTY/plink.exe", "-i", keypair, USER + "@" + instance.public_dns_name, remote_cmd])
 
 def ssh_all(cluster_name, cmd):
     """
@@ -223,7 +228,7 @@ def ssh_all(cluster_name, cmd):
     """
     cluster = get_cluster(cluster_name)
     for j in range(size(cluster_name)):
-        ssh(cluster_name, j, cmd)
+        ssh(cluster_name, j, cmd, True)
 
 def scp(cluster_name, instance_index, local_filename, remote_filename=False):
     """
@@ -234,12 +239,15 @@ def scp(cluster_name, instance_index, local_filename, remote_filename=False):
     """
     cluster = get_cluster(cluster_name)
     instance = get_instance(cluster, instance_index)
-    keypair = "%s/%s.pem" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
+    keypair = "%s/%s.ppk" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
     if not remote_filename:
         remote_filename = "."
-    os.system(("scp -r -i %s %s ubuntu@%s:%s" %
-               (keypair, local_filename, 
-               instance.public_dns_name, remote_filename)))
+
+    return subprocess.call(["C:/Program Files (x86)/PuTTY/pscp.exe", "-r", "-i", keypair, local_filename, USER + "@" + instance.public_dns_name + ':' + remote_filename])
+
+    # os.system(("scp -r -i %s %s ubuntu@%s:%s" %
+    #            (keypair, local_filename,
+    #            instance.public_dns_name, remote_filename)))
 
 def scp_all(cluster_name, local_filename, remote_filename=False):
     """
@@ -275,7 +283,7 @@ def get_cluster(cluster_name):
     if cluster_name not in clusters:
         print "No cluster with the name %s exists.  Exiting." % cluster_name
         clusters.close()
-        sys.exit()
+        return None
     cluster = clusters[cluster_name]
     clusters.close()
     return cluster
