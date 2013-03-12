@@ -15,6 +15,8 @@ Defines the Cluster and Instance classes used by `ec2.py`.
 # http://stackoverflow.com/questions/3614379/attributeerror-when-unpickling-an-object
 
 #### Cluster and Instance classes
+import paramiko
+
 
 class Cluster():
     """
@@ -46,3 +48,29 @@ class Instance():
     def __init__(self, boto_instance):
         self.id = boto_instance.id
         self.public_dns_name = boto_instance.public_dns_name
+        self.transport = None
+
+    def init_ssh(self, username, keypair):
+        if self.transport == None:
+            self.username = username
+            self.keypair = keypair
+
+            self.ssh = paramiko.SSHClient()
+            self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            self.ssh.connect(hostname=self.public_dns_name, username=self.username, key_filename=self.keypair)
+            self.ssh.exec_command('uname')
+            self.transport = self.ssh.get_transport()
+            self.sftp = paramiko.SFTPClient.from_transport(self.transport)
+
+        return self.transport
+
+    def ssh_cmd(self, cmd):
+        stdin, stdout, stderr = self.ssh.exec_command(cmd)
+        data = stdout.read() + stderr.read()
+        return data
+
+    def scp_put(self, localpath, remotepath):
+        return self.sftp.put(localpath, remotepath)
+
+    def scp_get(self, remotepath, localpath):
+        return self.sftp.get(remotepath, localpath)

@@ -20,14 +20,16 @@ import time
 
 # Third party libraries
 from boto.ec2.connection import EC2Connection
-
+import paramiko
 # My libraries
 import ec2_classes
 
 #### Constants and globals
 
 # The list of EC2 AMIs to use, from alestic.com
-AMIS = {"m1.small" : "ami-e2af508b",
+AMIS = {
+    't1.micro': 'ami-8e1a85e7', # EBS
+    "m1.small" : "ami-e2af508b", #ami-7cd64415 (django)
         "c1.medium" : "ami-e2af508b",
         "m1.large" : "ami-68ad5201",
         "m1.xlarge" : "ami-68ad5201",
@@ -216,19 +218,20 @@ def ssh(cluster_name, instance_index, cmd, background=False):
     """
     cluster = get_cluster(cluster_name)
     instance = get_instance(cluster, instance_index)
-    keypair = "%s/%s.ppk" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
+    keypair = "%s/%s.pem" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
     append = {True: " &", False: ""}[background]
     remote_cmd = ('nohup %s >> foo.out 2>> foo.err < /dev/null%s' %
                   (cmd, append))
-    return subprocess.call(["C:/Program Files (x86)/PuTTY/plink.exe", "-i", keypair, USER + "@" + instance.public_dns_name, remote_cmd])
+    instance.init_ssh(USER, keypair)
+    return instance.ssh_cmd(remote_cmd)
 
-def ssh_all(cluster_name, cmd):
+def ssh_all(cluster_name, cmd, background=False):
     """
     Run `cmd` on all instances in `cluster_name`.
     """
     cluster = get_cluster(cluster_name)
     for j in range(size(cluster_name)):
-        ssh(cluster_name, j, cmd, True)
+        ssh(cluster_name, j, cmd, background)
 
 def scp(cluster_name, instance_index, local_filename, remote_filename=False):
     """
@@ -239,15 +242,12 @@ def scp(cluster_name, instance_index, local_filename, remote_filename=False):
     """
     cluster = get_cluster(cluster_name)
     instance = get_instance(cluster, instance_index)
-    keypair = "%s/%s.ppk" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
+    keypair = "%s/%s.pem" % (os.environ["AWS_HOME"], os.environ["AWS_KEYPAIR"])
     if not remote_filename:
-        remote_filename = "."
+        remote_filename = "./" + os.path.basename(local_filename)
 
-    return subprocess.call(["C:/Program Files (x86)/PuTTY/pscp.exe", "-r", "-i", keypair, local_filename, USER + "@" + instance.public_dns_name + ':' + remote_filename])
-
-    # os.system(("scp -r -i %s %s ubuntu@%s:%s" %
-    #            (keypair, local_filename,
-    #            instance.public_dns_name, remote_filename)))
+    instance.init_ssh(USER, keypair)
+    return instance.scp_put(local_filename, remote_filename)
 
 def scp_all(cluster_name, local_filename, remote_filename=False):
     """

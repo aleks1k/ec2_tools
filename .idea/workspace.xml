@@ -2,31 +2,48 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ec2_tools.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fabric_test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/other.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_ec2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test_python.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/testrunner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec2.py" afterPath="$PROJECT_DIR$/ec2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec2_classes.py" afterPath="$PROJECT_DIR$/ec2_classes.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_ec2.py" afterPath="$PROJECT_DIR$/test_ec2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_python.py" afterPath="$PROJECT_DIR$/test_python.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ec2_tools.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362934600297" ignored="false" />
-    <file path="/ec2.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362938856941" ignored="false" />
-    <file path="/Python Console" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362937789346" ignored="false" />
+    <file path="/Dummy.txt" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363097267426" ignored="false" />
+    <file path="/ec2.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363120401440" ignored="false" />
+    <file path="/Python Console" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363120370565" ignored="false" />
     <file path="/fabric_test.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362871960993" ignored="false" />
     <file path="$PROJECT_DIR$/../scrapy_test/abitur/abitur/spiders/linkedin.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362904620801" ignored="false" />
     <file path="/linkedin.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362904614574" ignored="false" />
     <file path="$PROJECT_DIR$/../scrapy_test/abitur/abitur/items.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362884525914" ignored="false" />
     <file path="/items.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362882209096" ignored="false" />
-    <file path="/test_ec2.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362939337917" ignored="false" />
-    <file path="/test_python.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362939358431" ignored="false" />
+    <file path="/test_ec2.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363120471255" ignored="false" />
+    <file path="/test_python.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363117316963" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/mapquest_api.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363092312888" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/google_maps_api.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363085333862" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/prepare_input_data.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1362953361914" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/master_run.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363089648418" ignored="false" />
+    <file path="/master_run.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363120218708" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/node_run.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363086003998" ignored="false" />
+    <file path="/node_run.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363086003517" ignored="false" />
+    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/master_run.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363120219549" ignored="false" />
+    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/node_run.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363036820816" ignored="false" />
+    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/cluster_types.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363092647768" ignored="false" />
+    <file path="/cluster_types.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363086045855" ignored="false" />
+    <file path="/a.dummy" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363012460381" ignored="false" />
+    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/getopt_test.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363036446323" ignored="false" />
+    <file path="/getopt_test.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363036127055" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/cluster_types.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363086270394" ignored="false" />
+    <file path="/google_maps_api.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363085036965" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/master_base.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363086360695" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/node_run_solid.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363091594381" ignored="false" />
+    <file path="/master_base.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363093187828" ignored="false" />
+    <file path="/mapquest_api.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363088947515" ignored="false" />
+    <file path="/node_run_solid.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363089467807" ignored="false" />
+    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/master_base.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363120733490" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/geocode_out_12-170352.csv" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363093479410" ignored="false" />
+    <file path="/ec2_classes.py" changelist="8db57f58-fbc8-4ba5-89d9-5c9edbc71e5c" time="1363119684191" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +63,7 @@
       <file leaf-file-name="ec2.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ec2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="14" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-9.52">
+            <state line="232" column="0" selection-start="7840" selection-end="7840" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#261#270#0" expanded="true" />
               </folding>
@@ -54,10 +71,55 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="client.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/paramiko/client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="235" column="36" selection-start="9008" selection-end="9008" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/paramiko/config.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="test_ec2.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test_ec2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.4121212">
+            <state line="25" column="62" selection-start="624" selection-end="655" vertical-scroll-proportion="0.69153225">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ntpath.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/ntpath.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="197" column="0" selection-start="6362" selection-end="6362" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sftp_client.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/paramiko/sftp_client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="765" column="0" selection-start="28259" selection-end="28259" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ec2_classes.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ec2_classes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="54" column="0" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -66,34 +128,25 @@
       <file leaf-file-name="test_python.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test_python.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="11" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
+            <state line="14" column="27" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connection.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/site-packages/boto/connection.py">
+      <file leaf-file-name="auth_handler.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/paramiko/auth_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1061" column="0" selection-start="43245" selection-end="43245" vertical-scroll-proportion="0.0">
+            <state line="162" column="0" selection-start="5125" selection-end="5125" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_ec2.sh" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test_ec2.sh">
+      <file leaf-file-name="transport.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/site-packages/paramiko/transport.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="71" column="22" selection-start="2258" selection-end="2280" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fabric_test.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fabric_test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="19" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
+            <state line="730" column="0" selection-start="28094" selection-end="28094" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -118,9 +171,10 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/fabric_test.py" />
+        <option value="$PROJECT_DIR$/test_python.py" />
+        <option value="$PROJECT_DIR$/ec2_classes.py" />
         <option value="$PROJECT_DIR$/ec2.py" />
         <option value="$PROJECT_DIR$/test_ec2.py" />
-        <option value="$PROJECT_DIR$/test_python.py" />
       </list>
     </option>
   </component>
@@ -156,6 +210,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -176,17 +231,16 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PythonSdkConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="options.searchVisible" value="true" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OpenInclude/scrapers" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig">
     <servers>
@@ -237,6 +291,23 @@
       <module name="ec2_tools" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_ec2.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_python" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="ec2_tools" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_python.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
@@ -296,14 +367,16 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.fabric_test" />
       <item index="1" class="java.lang.String" itemvalue="Python.test_ec2" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test_python" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Python.test_ec2" />
-        <item index="1" class="java.lang.String" itemvalue="Python.fabric_test" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_python" />
+        <item index="2" class="java.lang.String" itemvalue="Python.fabric_test" />
       </list>
     </recent_temporary>
   </component>
@@ -336,15 +409,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-290" width="1696" height="1026" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15238678" sideWeight="0.6002304" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15422277" sideWeight="0.6013825" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3986175" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -412,15 +485,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -436,23 +504,9 @@
         <state line="66" column="25" selection-start="2073" selection-end="2081" vertical-scroll-proportion="-2.48" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ec2_classes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fabric_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="19" selection-start="848" selection-end="848" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test_ec2.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="22" selection-start="2258" selection-end="2280" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -464,25 +518,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test_ec2.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="22" selection-start="2258" selection-end="2280" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/paramiko/auth_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="0" selection-start="5125" selection-end="5125" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/paramiko/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/paramiko/transport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="730" column="0" selection-start="28094" selection-end="28094" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_python.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="27" selection-start="391" selection-end="391" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/paramiko/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="235" column="36" selection-start="9008" selection-end="9008" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/site-packages/paramiko/sftp_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="765" column="0" selection-start="28259" selection-end="28259" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ec2_classes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="0" selection-start="1762" selection-end="1762" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="0" selection-start="6362" selection-end="6362" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ec2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="14" selection-start="1205" selection-end="1205" vertical-scroll-proportion="-9.52">
+        <state line="232" column="0" selection-start="7840" selection-end="7840" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#261#270#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_python.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="11" selection-start="34" selection-end="34" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_ec2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="295" selection-end="295" vertical-scroll-proportion="0.4121212">
+        <state line="25" column="62" selection-start="624" selection-end="655" vertical-scroll-proportion="0.69153225">
           <folding />
         </state>
       </provider>
