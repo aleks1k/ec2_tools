@@ -22,7 +22,7 @@ while cluster == None:
 # ec2.scp_all(CLASTER_NAME, MAIN_SCRIPT)
 
 # d = ec2.ssh_all(CLASTER_NAME, 'ls -la')
-ec2.scp_all(CLASTER_NAME, MAIN_SCRIPT,)
-d2 = ec2.ssh_all(CLASTER_NAME, 'python ./' + os.path.basename(MAIN_SCRIPT))
-print str(d2)
-ec2.shutdown(CLASTER_NAME)
+ec2.scp(CLASTER_NAME, 0, MAIN_SCRIPT,)
+d2 = ec2.ssh(CLASTER_NAME, 0, 'python ./' + os.path.basename(MAIN_SCRIPT))
+# print str(d2)
+# ec2.shutdown(CLASTER_NAME)
