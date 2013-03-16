@@ -87,7 +87,7 @@ class ClusterManager():
         # Update clusters
         clusters[cluster_name] = ec2_classes.Cluster(cluster_name, instance_type, instances, username = self.USER, keypair = keypair_filename)
         clusters.sync()
-
+        return clusters[cluster_name]
 
     def show(self):
         """
@@ -108,6 +108,7 @@ class ClusterManager():
         """
         if not self.exists(cluster_name):
             print "No cluster with that name."
+            return
         print "Shutting down cluster %s." % cluster_name
         clusters = self.get_clusters()
         self.ec2_conn.terminate_instances(
