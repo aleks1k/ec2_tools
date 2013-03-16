@@ -65,7 +65,10 @@ class NodeBase:
         self.tasks.save(task)
 
         try:
-            return self.make_task(task)
+            res =  self.make_task(task)
+            task['status'] = Task.STATUS_COMPLETED
+            self.tasks.save(task)
+            return res
         except:
             # update task (status -> completed, results -> addresses)
             task['result'].append(traceback.format_exc())

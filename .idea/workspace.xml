@@ -2,19 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9f509ce-cccc-49b6-9438-8410312592b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/cluster_types.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/master_base.py" />
-      <change type="DELETED" beforePath="D:\Projects\ec2_tools\.idea\workspace.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ec2.py" afterPath="$PROJECT_DIR$/ec2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cluster_types.py" afterPath="$PROJECT_DIR$/cluster_types.py" />
     </list>
     <ignored path="ec2_tools.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363429711095" ignored="false" />
     <file path="/ec2.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363465555680" ignored="false" />
-    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/master_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363388239863" ignored="false" />
+    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/master_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363467755335" ignored="false" />
     <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/master_base.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363388498984" ignored="false" />
-    <file path="$PROJECT_DIR$/../AmenitiesDB/master_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363466390115" ignored="false" />
-    <file path="/master_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363466388695" ignored="false" />
+    <file path="$PROJECT_DIR$/../AmenitiesDB/master_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363469281215" ignored="false" />
+    <file path="/master_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363467697774" ignored="false" />
     <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/cluster_types.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363454507312" ignored="false" />
     <file path="$PROJECT_DIR$/../OpenInclude/scrapers/stackoverflow/get_q_count.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363458309990" ignored="false" />
     <file path="/get_q_count.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363458282154" ignored="false" />
@@ -22,7 +19,8 @@
     <file path="/master_base.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363467401682" ignored="false" />
     <file path="$PROJECT_DIR$/../AmenitiesDB/node_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363466287016" ignored="false" />
     <file path="/node_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363466246237" ignored="false" />
-    <file path="/cluster_types.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363466143822" ignored="false" />
+    <file path="/cluster_types.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363468603855" ignored="false" />
+    <file path="$PROJECT_DIR$/../OpenInclude/scrapers/amazon_ec2_cluster/node_run.py" changelist="d9f509ce-cccc-49b6-9438-8410312592b8" time="1363467709656" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,9 +89,11 @@
       <file leaf-file-name="cluster_types.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cluster_types.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="128" column="44" selection-start="4142" selection-end="4142" vertical-scroll-proportion="0.0">
+            <state line="131" column="44" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#47#63#0" expanded="true" />
+                <marker date="1363468653002" expanded="true" signature="336:4917" placeholder="..." />
+                <marker date="1363468653002" expanded="true" signature="1349:1561" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -276,7 +276,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-290" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -422,9 +422,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cluster_types.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="128" column="44" selection-start="4142" selection-end="4142" vertical-scroll-proportion="0.0">
+        <state line="131" column="44" selection-start="4250" selection-end="4250" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#47#63#0" expanded="true" />
+            <marker date="1363468653002" expanded="true" signature="336:4917" placeholder="..." />
+            <marker date="1363468653002" expanded="true" signature="1349:1561" placeholder="..." />
           </folding>
         </state>
       </provider>
