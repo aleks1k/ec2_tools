@@ -11,6 +11,7 @@ from cluster_types import Task, NodeBase
 
 from ec2_tools.ec2 import ClusterManager
 from aws_settings.settings import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
+import socket
 
 def we_are_frozen():
     # All of the modules are built-in to the interpreter, e.g., by py2exe
@@ -163,9 +164,9 @@ class MasterNodeBase():
                         print '\n', qus_count,
                         tasks_for_node = []
                         for j in range(i, tasks_list.count()):
-                            tasks_for_node.append(tasks_list[j])
-                            if j > i + tasks_for_node_count:
+                            if j >= i + tasks_for_node_count:
                                 break
+                            tasks_for_node.append(tasks_list[j])
                         ntask = self.assign_task(node, tasks_for_node)
                         qus_count += ntask
                         i += ntask
