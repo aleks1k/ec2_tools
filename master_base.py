@@ -82,8 +82,13 @@ class MasterNodeBase():
     def run_cluster(self, create=True):
         self.cluster = self.cluster_manager.create(self.CLUSTER_NAME, self.CLUSTER_NODES_COUNT, 't1.micro')
         if create:
-            self.cluster.ssh(self.SSH_INIT_COMMAND, background=False)
-
+            inited = False
+            while not inited:
+                try:
+                    self.cluster.ssh(self.SSH_INIT_COMMAND, background=False)
+                    inited = True
+                except socket.error as ex:
+                    print 'Can\'t connect to node %s' % str(ex)
         for f in self.NODE_SCRIPTS:
             self.cluster.scp_put(f, './' + os.path.basename(f))
 
@@ -156,7 +161,11 @@ class MasterNodeBase():
                     i=0
                     for node in nodes_list:
                         print '\n', qus_count,
-                        tasks_for_node = tasks_list[i:tasks_for_node_count]
+                        tasks_for_node = []
+                        for j in range(i, tasks_list.count()):
+                            tasks_for_node.append(tasks_list[j])
+                            if j > i + tasks_for_node_count:
+                                break
                         ntask = self.assign_task(node, tasks_for_node)
                         qus_count += ntask
                         i += ntask
