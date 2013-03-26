@@ -37,7 +37,7 @@ class MasterNodeBase():
     SSH_INIT_COMMAND = 'sudo aptitude -y install python-setuptools; sudo easy_install pymongo'
 
     CLUSTER_NAME = "alpha"
-    cluster_manager = ClusterManager(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY)
+    cluster_manager = ClusterManager(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, 2)
     cluster = None
 
     db = None

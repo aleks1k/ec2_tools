@@ -20,15 +20,62 @@ import time
 
 # Third party libraries
 from boto.ec2.connection import EC2Connection
+import boto.ec2
 import paramiko
 # My libraries
 import ec2_classes
 
 #### Constants and globals
 class ClusterManager():
+    # http://cloud-images.ubuntu.com/locator/ec2/
+    """
+    ap-northeast-1	precise	12.04 LTS	amd64	ebs	20130222	ami-77cf4976	aki-44992845
+    ap-southeast-1	precise	12.04 LTS	amd64	ebs	20130222	ami-7881cc2a	aki-fe1354ac
+    eu-west-1	precise	12.04 LTS	amd64	ebs	20130222	ami-da1810ae	aki-71665e05
+    sa-east-1	precise	12.04 LTS	amd64	ebs	20130222	ami-47fb205a	aki-c48f51d9
+    us-east-1	precise	12.04 LTS	amd64	ebs	20130222	ami-de0d9eb7	aki-88aa75e1
+    us-west-1	precise	12.04 LTS	amd64	ebs	20130222	ami-b81230fd	aki-f77e26b2
+    ap-southeast-2	precise	12.04 LTS	amd64	ebs	20130222	ami-4cf26376	aki-31990e0b
+    us-west-2	precise	12.04 LTS	amd64	ebs	20130222	ami-4ad94c7a	aki-fc37bacc
+    """
+    regions = [
+        {
+            'name': 'eu-west-1',
+            'amis': {
+                't1.micro': 'ami-da1810ae',
+            },
+            'keypair': "cluster_key",
+            'id': 7
+        },
+        {
+            'name': 'us-east-1',
+            'amis': {
+                't1.micro': 'ami-de0d9eb7',
+            },
+            'keypair': "ec2cluster",
+            'id': 3
+        },
+        {
+            'name': 'us-west-1',
+            'amis': {
+                't1.micro': 'ami-b81230fd',
+            },
+            'keypair': "westcluster",
+            'id': 5
+        },
+        {
+            'name': 'us-west-2',
+            'amis': {
+                't1.micro': 'ami-4ad94c7a',
+            },
+            'keypair': "cluster_key",
+            'id': 2
+        },
+    ]
+
     # The list of EC2 AMIs to use, from alestic.com
     AMIS = {
-        't1.micro': 'ami-8e1a85e7', # EBS
+        't1.micro': 'ami-de0d9eb7', # us-east-1
         "m1.small" : "ami-e2af508b",
         "c1.medium" : "ami-e2af508b",
         "m1.large" : "ami-68ad5201",
@@ -52,13 +99,19 @@ class ClusterManager():
     AWS_ACCESS_KEY_ID  = ""
     AWS_SECRET_ACCESS_KEY = ""
 
-    def __init__(self, key_id, access_key):
+    def __init__(self, key_id, access_key, region_id = 1):
         self.AWS_ACCESS_KEY_ID = key_id
         self.AWS_SECRET_ACCESS_KEY = access_key
+        region = self.regions[region_id]
+        self.AWS_KEYPAIR = region['keypair']
+        self.AMIS = region['amis']
+        print 'Use %s region' % region['name']
+
         # EC2 connection object
-        self.ec2_conn = EC2Connection(self.AWS_ACCESS_KEY_ID, self.AWS_SECRET_ACCESS_KEY)
+        ec2_regions = boto.ec2.regions(aws_access_key_id=self.AWS_ACCESS_KEY_ID, aws_secret_access_key=self.AWS_SECRET_ACCESS_KEY)
+        self.ec2_conn = ec2_regions[region['id']].connect(aws_access_key_id=self.AWS_ACCESS_KEY_ID, aws_secret_access_key=self.AWS_SECRET_ACCESS_KEY)
         self.clusters = None
-        self.cluster_db_file = "%s/.ec2-shelf" % self.AWS_HOME
+        self.cluster_db_file = "%s/.ec2-%s-shelf" % (self.AWS_HOME, region['name'])
 
     #### The following are the functions corresponding to the command line
     #### API calls: create, show, show_all etc.
