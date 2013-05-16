@@ -24,94 +24,63 @@ import boto.ec2
 import paramiko
 # My libraries
 import ec2_classes
-
+import aws_settings
 #### Constants and globals
 class ClusterManager():
-    # http://cloud-images.ubuntu.com/locator/ec2/
-    """
-    ap-northeast-1	precise	12.04 LTS	amd64	ebs	20130222	ami-77cf4976	aki-44992845
-    ap-southeast-1	precise	12.04 LTS	amd64	ebs	20130222	ami-7881cc2a	aki-fe1354ac
-    eu-west-1	precise	12.04 LTS	amd64	ebs	20130222	ami-da1810ae	aki-71665e05
-    sa-east-1	precise	12.04 LTS	amd64	ebs	20130222	ami-47fb205a	aki-c48f51d9
-    us-east-1	precise	12.04 LTS	amd64	ebs	20130222	ami-de0d9eb7	aki-88aa75e1
-    us-west-1	precise	12.04 LTS	amd64	ebs	20130222	ami-b81230fd	aki-f77e26b2
-    ap-southeast-2	precise	12.04 LTS	amd64	ebs	20130222	ami-4cf26376	aki-31990e0b
-    us-west-2	precise	12.04 LTS	amd64	ebs	20130222	ami-4ad94c7a	aki-fc37bacc
-    """
-    regions = [
-        {
-            'name': 'eu-west-1',
-            'amis': {
-                't1.micro': 'ami-da1810ae',
-            },
-            'keypair': "cluster_key",
-            'id': 7
-        },
-        {
-            'name': 'us-east-1',
-            'amis': {
-                't1.micro': 'ami-de0d9eb7',
-            },
-            'keypair': "ec2cluster",
-            'id': 3
-        },
-        {
-            'name': 'us-west-1',
-            'amis': {
-                't1.micro': 'ami-b81230fd',
-            },
-            'keypair': "westcluster",
-            'id': 5
-        },
-        {
-            'name': 'us-west-2',
-            'amis': {
-                't1.micro': 'ami-4ad94c7a',
-            },
-            'keypair': "cluster_key",
-            'id': 2
-        },
-    ]
-
-    # The list of EC2 AMIs to use, from alestic.com
-    AMIS = {
-        't1.micro': 'ami-de0d9eb7', # us-east-1
-        "m1.small" : "ami-e2af508b",
-        "c1.medium" : "ami-e2af508b",
-        "m1.large" : "ami-68ad5201",
-        "m1.xlarge" : "ami-68ad5201",
-        "m2.xlarge" : "ami-68ad5201",
-        "m2.2xlarge" : "ami-68ad5201",
-        "m2.4xlarge" : "ami-68ad5201",
-        "c1.xlarge" : "ami-68ad5201",
-        "cc1.4xlarge" : "ami-1cad5275"
-    }
-
-    # The most important data structure we use is a persistent shelf which
-    # is used to represent all the clusters.  The keys in this shelf are
-    # the `cluster_names`, and the values will be ec2_classes.Cluster
-    # objects, which represent named EC2 clusters.
-    #
-    # The shelf will be stored at "AWS_HOME/.ec2-shelf"
-    USER = "ubuntu"
-    AWS_HOME = "D:/temp/ec2home"
-    AWS_KEYPAIR = "ec2cluster"
+    regions = aws_settings.regions
+    USER = aws_settings.USER
+    AWS_HOME = aws_settings.AWS_HOME
+    AWS_KEYPAIR = aws_settings.AWS_KEYPAIR
     AWS_ACCESS_KEY_ID  = ""
     AWS_SECRET_ACCESS_KEY = ""
 
-    def __init__(self, key_id, access_key, region_id = 1):
+    def __init__(self, key_id, access_key, region_id = 0):
+        if not os.path.exists(self.AWS_HOME):
+            os.mkdir(self.AWS_HOME)
         self.AWS_ACCESS_KEY_ID = key_id
         self.AWS_SECRET_ACCESS_KEY = access_key
         region = self.regions[region_id]
-        self.AWS_KEYPAIR = region['keypair']
+        if 'keypair' in region:
+            self.AWS_KEYPAIR = region['keypair']
         self.AMIS = region['amis']
         print 'Use %s region' % region['name']
 
         # EC2 connection object
         ec2_regions = boto.ec2.regions(aws_access_key_id=self.AWS_ACCESS_KEY_ID, aws_secret_access_key=self.AWS_SECRET_ACCESS_KEY)
         self.ec2_conn = ec2_regions[region['id']].connect(aws_access_key_id=self.AWS_ACCESS_KEY_ID, aws_secret_access_key=self.AWS_SECRET_ACCESS_KEY)
+
+        self.get_key(self.AWS_KEYPAIR)
+
         self.clusters = None
         self.cluster_db_file = "%s/.ec2-%s-shelf" % (self.AWS_HOME, region['name'])
+
+    def get_key(self, key_name):
+    # Check to see if specified keypair already exists.
+    # If we get an InvalidKeyPair.NotFound error back from EC2,
+    # it means that it doesn't exist and we need to create it.
+        try:
+            key = self.ec2_conn.get_all_key_pairs(keynames=[key_name])[0]
+        except self.ec2_conn.ResponseError, e:
+            if e.code == 'InvalidKeyPair.NotFound':
+                print 'Creating keypair: %s' % key_name
+                # Create an SSH key to use when logging into instances.
+                key = self.ec2_conn.create_key_pair(key_name)
+
+                # Make sure the specified key_dir actually exists.
+                # If not, create it.
+                # key_dir = os.expanduser(key_dir)
+                # key_dir = os.expandvars(key_dir)
+                # if not os.path.isdir(key_dir):
+                #     os.mkdir(key_dir, 0700)
+
+                # AWS will store the public key but the private key is
+                # generated and returned and needs to be stored locally.
+                # The save method will also chmod the file to protect
+                # your private key.
+                key.save(self.AWS_HOME)
+            else:
+                raise
+        return key
 
     #### The following are the functions corresponding to the command line
     #### API calls: create, show, show_all etc.

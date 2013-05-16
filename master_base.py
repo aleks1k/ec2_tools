@@ -3,15 +3,12 @@ from datetime import datetime
 import os
 from time import sleep
 import sys
-
-__author__ = 'Alexey'
-
 import pymongo
 from cluster_types import Task, NodeBase
-
 from ec2_tools.ec2 import ClusterManager
-from aws_settings.settings import AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
 import socket
+
+__author__ = 'Alexey'
 
 def we_are_frozen():
     # All of the modules are built-in to the interpreter, e.g., by py2exe
@@ -24,6 +21,10 @@ def module_path():
     return os.path.dirname(unicode(__file__, encoding))
 
 class MasterNodeBase():
+    AWS_ACCESS_KEY_ID = '<KEY_ID>'
+    AWS_SECRET_ACCESS_KEY = '<SECRET>'
+    AWS_REGION_ID = 0
+
     db_ip = 'localhost'
     db_name = 'cluster_test'
     db_tasks_collection = 'cluster_tasks'
@@ -35,10 +36,6 @@ class MasterNodeBase():
 
     NODE_SCRIPTS = [node_script]
     SSH_INIT_COMMAND = 'sudo aptitude -y install python-setuptools; sudo easy_install pymongo'
-
-    CLUSTER_NAME = "alpha"
-    cluster_manager = ClusterManager(AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, 2)
-    cluster = None
 
     db = None
     nodes = None
@@ -62,6 +59,10 @@ class MasterNodeBase():
         self.db = self.mongoConn[self.db_name]
         self.tasks = self.db[self.db_tasks_collection]
         self.nodes = self.db[self.db_nodes_collection]
+
+        self.CLUSTER_NAME = "alpha"
+        self.cluster_manager = ClusterManager(self.AWS_ACCESS_KEY_ID, self.AWS_SECRET_ACCESS_KEY, self.AWS_REGION_ID)
+        self.cluster = None
 
     def create_task(self, tasks_collection, task_params):
         task = {
